@@ -1,0 +1,1 @@
+uniq %s,cat %s | tr -s [:lower:] [:upper:],grep -i the %s,sed 's/text/text/' %s

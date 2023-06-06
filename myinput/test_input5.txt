@@ -1,0 +1,1 @@
+sort %s,uniq -c %s,awk "{print $2}", grep "fillintext" %s

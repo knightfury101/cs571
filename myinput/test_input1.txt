@@ -1,0 +1,1 @@
+cat %s | tr -s '[[:punct:][:space:]]' '\n',grep text %s,uniq -c %s

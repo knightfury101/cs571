@@ -1,0 +1,1 @@
+sed "s/text/text" %s, grep "text" %s, uniq -c %s, awk "{print $1}" %s

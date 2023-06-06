@@ -1,0 +1,226 @@
+
+
+WORKFLOW: uniq -c %s,cat %s | tr -s [:lower:] [:upper:],grep -i 0 %s,sed 's/0/11/' %s 
+
+uniq %s,cat %s | tr -s [:lower:] [:upper:],grep -i 0 %s,sed 's/0/11/' %s
+
+#####################
+SEQUENTIAL RUN
+
+uniq -c %s,cat %s | tr -s [:lower:] [:upper:] | grep -i the | sed 's/text/text/'  
+
+RUN 1:
+real	2m11.932s
+user	4m39.301s
+sys	1m28.141s
+
+RUN 2:
+real	5m34.820s
+user	11m52.480s
+sys	3m42.991s
+
+RUN 3:
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+DAG FLOW : 19,29,39,49
+
+#####################
+14 GBS
+cat ../testdata/vm_cpu_readings-file-{1..11}-of-195.csv >> test_data2.txt
+
+RUN 1:
+real	3m36.453s
+user	9m36.275s
+sys	6m26.565s
+
+
+RUN 2:
+real	3m34.740s
+user	9m32.087s
+sys	7m11.646s
+
+
+RUN 3:
+
+
+
+
+#####################
+34 GBS
+cat ../testdata/vm_cpu_readings-file-{1..28}-of-195.csv >> test_data4.txt
+
+RUN 1:
+real	13m27.064s
+user	24m27.954s
+sys	18m54.776s
+RUN 2:
+
+RUN 3:
+
+
+
+#####################
+53 GBS
+cat ../testdata/vm_cpu_readings-file-{1..44}-of-195.csv >> test_data4.txt
+
+RUN 1:
+real	37m29.804s
+user	40m0.029s
+sys	27m35.179s
+
+RUN 2:
+
+RUN 3:
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+DAG FLOW : (50,20,50),40 
+
+
+#####################
+14 GBS
+cat ../testdata/vm_cpu_readings-file-{1..11}-of-195.csv >> test_data2.txt
+
+RUN 1:
+real	5m32.473s
+user	9m44.210s
+sys	8m50.161s
+
+
+
+RUN 2:
+
+
+RUN 3:
+
+
+
+
+#####################
+34 GBS
+cat ../testdata/vm_cpu_readings-file-{1..28}-of-195.csv >> test_data4.txt
+
+RUN 1:
+real	21m26.584s
+user	25m28.779s
+sys	19m37.998s
+
+RUN 2:
+
+RUN 3:
+
+#####################
+53 GBS
+cat ../testdata/vm_cpu_readings-file-{1..44}-of-195.csv >> test_data4.txt
+
+RUN 1:
+real	57m51.320s
+user	43m34.951s
+sys	54m13.430s
+
+RUN 2:
+
+RUN 3:
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+DAG FLOW : 20,40,60,80
+
+
+#####################
+14 GBS
+cat ../testdata/vm_cpu_readings-file-{1..11}-of-195.csv >> test_data2.txt
+
+RUN 1:
+real	4m25.939s
+user	11m16.950s
+sys	7m41.777s
+
+
+RUN 2:
+
+
+RUN 3:
+
+
+
+#####################
+34 GBS
+cat ../testdata/vm_cpu_readings-file-{1..28}-of-195.csv >> test_data4.txt
+
+RUN 1:
+real	18m49.471s
+user	27m17.894s
+sys	19m17.300s
+
+RUN 2:
+
+RUN 3:
+
+#####################
+53 GBS
+cat ../testdata/vm_cpu_readings-file-{1..44}-of-195.csv >> test_data4.txt
+
+
+RUN 1:
+real	45m57.755s
+user	47m38.853s
+sys	30m25.061s
+
+RUN 2:
+
+RUN 3:
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+DAG FLOW : 20,20,20,20
+
+
+#####################
+14 GBS
+cat ../testdata/vm_cpu_readings-file-{1..11}-of-195.csv >> test_data2.txt
+
+RUN 1:
+real	3m47.250s
+user	9m31.888s
+sys	7m24.419s
+
+RUN 2:
+
+
+RUN 3:
+
+
+
+#####################
+34 GBS
+cat ../testdata/vm_cpu_readings-file-{1..28}-of-195.csv >> test_data4.txt
+
+RUN 1:
+real	12m46.340s
+user	23m34.464s
+sys	19m41.348s
+
+
+RUN 2:
+
+RUN 3:
+
+#####################
+53 GBS
+cat ../testdata/vm_cpu_readings-file-{1..44}-of-195.csv >> test_data4.txt
+
+RUN 1:
+real	40m7.887s
+user	39m57.117s
+sys	27m5.837s
+
+RUN 2:
+
+RUN 3:

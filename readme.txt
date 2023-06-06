@@ -1,0 +1,3 @@
+When cloning this project...
+
+1. Once you clone this, make a directory called filestore within the project directory because that is where it the intermediate files are stored.

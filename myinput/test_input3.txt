@@ -1,0 +1,1 @@
+cat %s | tr -s [:lower:] [:upper:],grep "fillintext" %s,uniq %s,cat %s | [:upper:] [:lower:]

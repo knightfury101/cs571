@@ -1,0 +1,51 @@
+cat %s | tr -s '[[:punct:][:space:]]' '\n',grep text %s,uniq -c %s
+
+sed "s/text/text" %s, grep "text" %s, uniq -c %s, awk "{print $1}" %s
+
+cat %s | tr -s [:lower:] [:upper:],grep "fillintext" %s,uniq %s,cat %s | [:upper:] [:lower:]
+
+
+uniq -c %s,cat %s | tr -s [:lower:] [:upper:],grep -i the %s,sed 's/text/text/' %s 
+
+//sort %s,uniq -c %s,awk "{print $2}", grep "fillintext" %s
+
+#NOTE: cant use sort, its too memory intensive
+
+
+
+//bad workflows
+
+19,29,39,49 // why? because we would be processing the whole file from the start (which could be very large) and will have to be split out which can take a while AND it doesnt divide easily
+          // so some nodes will have more parents and therefore have more files to merge and thus have stragglers
+
+50,20,50,40  //why? we would be splitting int a large number of files and immediately merging all those files into fewer files and then back and forth again
+
+//good workflows?
+
+20,40,60,80... // divides easily and only involves splitting (no merging)
+
+20,20,20,20 // each thread will essentially get a single file as each node in the dag will be assigned only a single
+
+
+//////////////////////////
+49,39,29,19 //why?  (bad workflow) because we would be splitting the file initially (and adding that intial overhead) and merging the files into bigger and bigger single files AND it doesnt divide easily
+          // so some nodes will have more parents and therefore have more files to merge and thus have stragglers
+//////////////////////////
+
+
+
+
+
+//DONT DO BELOW
+////////////////////////
+50,40,30,20 // (good workflow) divides more easily so every child node will have an even # of parents and stragglers would not emerge as much (would affect overall completion time)
+         // and only involves merging files, only an intial splitting
+///////////////////////
+
+
+
+//for 13,23,34,43,?53? gbs worth of data
+
+for 14,34,53 gbs worth of data
+
+

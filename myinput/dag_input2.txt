@@ -1,0 +1,2 @@
+grep the %s,sed s/f/banana/ %s,awk '/mili/ {print}' %s
+1,2,3
